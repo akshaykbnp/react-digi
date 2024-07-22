@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import FontsData from "../../data/fonts.data";
+import FontsData from "../../../data/fonts.data";
 import "./signs.scss";
 
 interface ISignsProps {
@@ -9,9 +9,8 @@ interface ISignsProps {
 export const Signs: React.FC<ISignsProps> = ({ text }) => {
 
   const [imgsArr, setImgsArr] = useState<JSX.Element[]>([]);
-
-
-
+  const [fonts, setFonts] = useState<string[]>(FontsData.map((data)=>data.name));
+  const [inputText, setInputText] = useState<string>();
 
   const generateSignatureImgs = (): JSX.Element[] => {
 
@@ -34,30 +33,24 @@ export const Signs: React.FC<ISignsProps> = ({ text }) => {
     canvas.width = 500;
     canvas.height = 200;
     const ctx = canvas.getContext("2d");
+    console.log("fonts", font);
     if (ctx) {
       ctx.font = `50px ${font}`;
       ctx.fillStyle = "#000";
       ctx.fillText(text, 50, 50);
     }
-
-    // console.log("images : ", canvas.toDataURL("image/png").split(",")[1]);
     return canvas.toDataURL("image/png").split(",")[1];
-    // Convert canvas to a Blob and save it
-    //   canvas.toBlob((blob) => {
-    //     if (blob) {
-    //       saveAs(blob, "sign.png");
-    //     }
-    //   }, "image/png");
   }
 
 
   useEffect(() => {
-    setImgsArr(generateSignatureImgs());
+    // setImgsArr(generateSignatureImgs());
+    setInputText(text);
   }, [text]);
 
 
-  return (<>{imgsArr && <div className="sign-img-wrapper">
-    {imgsArr.map((item, index) => (<div key={index} className="img-container">{item}</div>))}
+  return (<>{imgsArr && <div className="sign-img-wrapper ">
+    {fonts.map((font, index) => (<div key={index} className="font-container m-3"><span style={{fontFamily : `"${font}", sans-serif`}}>{inputText}</span></div>))}
   </div>
   }</>)
 }

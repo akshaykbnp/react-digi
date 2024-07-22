@@ -4,7 +4,7 @@ import Header from './components/header/header';
 import Draw from './components/draw/draw';
 import Type from './components/type/type';
 import { useRef, useEffect } from 'react';
-import FontsData from './components/data/fonts.data';
+import FontsData from './data/fonts.data';
 import SignPdf from './components/sign-pdf/sign.pdf';
 
 function App() {
