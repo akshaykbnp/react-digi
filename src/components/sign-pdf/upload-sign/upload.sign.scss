@@ -2,10 +2,18 @@
     height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-top: 20px;
+    margin-top: 10px;
+
     .sign-wrapper{
         border: 1px solid gray;
         border-radius: 5px;
     }
 
+    .load-sign-btn-group{
+        width: 100%;
+    }
+
+    .load-sign-btn-group:last-child{
+        margin-left: 5px;
+    }
 }

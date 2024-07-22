@@ -11,7 +11,7 @@ const SignPdf: React.FC = () => {
   return (
       <div className="sign-pdf-wrapper">
         {fileData ? <PdfViewer fileData={fileData} /> : <DropZone setFileData={setFileData} />}
-        <UploadSign/>
+        {/* <UploadSign/> */}
       </div>
   );
 };

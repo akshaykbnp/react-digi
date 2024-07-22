@@ -3,7 +3,7 @@
 
 .home-wrapper{
     width: 100vw;
-    height: 90vh;
+    height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +12,7 @@
         position: relative;
         width: 75%;
         height: 75%;
+        max-height: 500px;
         // background-color: $secondaryWhite !important;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
                 
