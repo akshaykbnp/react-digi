@@ -4,6 +4,7 @@ import { Document, Page } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import Stack from 'react-bootstrap/Stack';
+import PDFReader from "../../pdf/pdf";
 
 
 interface IPdfviewerProps {
@@ -23,15 +24,15 @@ export const PdfViewer: React.FC<IPdfviewerProps> = ({ fileData }) => {
     <div className="pdf-editor-wrapper d-flex">
 
       {/* pdf viewer */}
-      <div className="document-viewer" >
+      {/* <div className="document-viewer" >
         <Document file={fileData} onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} />
         </Document>
         <p>
           Page {pageNumber} of {numPages}
         </p>
-      </div>
-
+      </div> */}
+        <PDFReader fileData={fileData}/>
       {/* pdf sign editor */}
       <Stack gap={3}>
       <div className="p-2">Signing Options</div>
