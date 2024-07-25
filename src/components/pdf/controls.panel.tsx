@@ -53,14 +53,10 @@ const ControlPanel : React.FC<IControlPanelProps> = ({file, pageNumber, numPages
   return (
     <div className="control-panel m-3 p-3 d-flex align-items-baseline justify-content-between">
       <div className="d-flex justify-content-between align-items-baseline">
-        <i
-          className={`fas fa-fast-backward mx-3 ${firstPageClass}`}
-          onClick={goToFirstPage}
-        />
-        <i
-          className={`fas fa-backward mx-3 ${firstPageClass}`}
-          onClick={goToPreviousPage}
-        />
+        <button style={{height : "20px", width  :" 20px"}} className={`fas fa-fast-backward mx-3 ${firstPageClass}`}
+          onClick={goToFirstPage}></button>
+          <button style={{height : "20px", width  :" 20px"}} className={`fas fa-backward mx-3 ${firstPageClass}`}
+          onClick={goToPreviousPage}></button>
         <span>
           Page{' '}
           <input
@@ -74,29 +70,21 @@ const ControlPanel : React.FC<IControlPanelProps> = ({file, pageNumber, numPages
           />{' '}
           of {numPages}
         </span>
-        <i
-          className={`fas fa-forward mx-3 ${lastPageClass}`}
-          onClick={goToNextPage}
-        />
-        <i
-          className={`fas fa-fast-forward mx-3 ${lastPageClass}`}
-          onClick={goToLastPage}
-        />
+        <button style={{height : "20px", width  :" 20px"}} className={`fas fa-forward mx-3 ${lastPageClass}`}
+          onClick={goToNextPage}></button>
+          <button style={{height : "20px", width  :" 20px"}} className={`fas fa-fast-forward mx-3 ${lastPageClass}`}
+          onClick={goToLastPage}></button>
       </div>
       <div className="d-flex justify-content-between align-items-baseline">
-        <i
-          className={`fas fa-search-minus mx-3 ${zoomOutClass}`}
-          onClick={zoomOut}
-        />
+      <button style={{height : "20px", width  :" 20px"}} className={`fas fa-search-minus mx-3 ${zoomOutClass}`}
+          onClick={zoomOut}></button>
         <span>{(scale * 100).toFixed()}%</span>
-        <i
-          className={`fas fa-search-plus mx-3 ${zoomInClass}`}
-          onClick={zoomIn}
-        />
+        <button style={{height : "20px", width  :" 20px"}} className={`fas fa-search-plus mx-3 ${zoomInClass}`}
+          onClick={zoomIn}></button>
       </div>
       <div className="mx-3">
         <a href="/assets/docs/file-sample.pdf" download={true} title="download">
-          <i className="fas fa-file-download clickable" />
+        <button style={{height : "20px", width  :" 20px"}} className="fas fa-file-download clickable"></button>
         </a>
       </div>
       <div className="mx-3">
